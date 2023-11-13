@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ .square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Adjust the size of the square */
+  height: 60px; /* Adjust the size of the square */
+  font-size: 48px;
+  margin: 5px; /* Adjust the margin between squares */
+  background: linear-gradient(to top right, violet, blue, green);
+  color: white;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.square:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}

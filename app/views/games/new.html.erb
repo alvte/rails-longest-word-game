@@ -1,0 +1,27 @@
+<div class="container d-flex flex-column align-items-center">
+  <div class="row justify-content-center">
+    <h1>New game</h1>
+  </div>
+  <div class="row">
+    <% @array.each do |letter| %>
+      <div class="col text-center">
+        <div class="square">
+          <%=letter%>
+        </div>
+      </div>
+    <%end%>
+  </div>
+  <form action="/score" method="post" data-turbo="false">
+    <div class="container">
+    <form class="form-group">
+        <label for="formFile" class="form-label">What is the longest word you can find?</label>
+        <div class="input-group">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= hidden_field_tag :grid_letters, @array %>
+          <input type="text" name="answer" class="form-control form-class flex-fill">
+          <button type="submit" class="btn btn-outline-dark">Play</button>
+        </div>
+      </form>
+    </div>
+  </form>
+</div>
